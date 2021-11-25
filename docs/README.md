@@ -1,7 +1,3 @@
-# Maximally Simple Knowledge Representation Formalism (MSKR)
-
-
-
 Knowledge graphs are very large semantic nets that integrate data from heterogeneous sources relying on a knowledge representation formalism to describe the stored knowledge. The size of knowledge graphs can quickly grow to a vast amount of facts a reasoning engine must handle. For a performant, in terms of reasoning and constraint checking, knowledge graph, a straightforward knowledge representation formalism that is a simple as possible and as expressive as necessary is required. Typically, knowledge graphs have a relatively simple TBox and a vast ABox. A knowledge representation formalism supporting type hierarchies, property definitions, and value assertions including *sameAs* statements is sufficient for most of the enterprise use cases.
 
 We present a knowledge representation formalism supporting the aforementioned features, called Maximally Simple Knowledge Representation Formalism for schema.org-based knowledge graphs (MSKR). MSKR is derived from RDFS and aligned with the data model of schema.org. Reasoning with MSKR can be implemented using a rule-based engine.
