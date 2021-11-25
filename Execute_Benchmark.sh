@@ -36,8 +36,4 @@ mkdir -p ./Results/Constraints
 cp ./$working_dir/Constraint_Checking_Results/error.log ./Results/Constraints
 cp ./$working_dir/Constraint_Checking_Results/*.csv ./Results/Constraints
 
-# Remove working directory
-rm -rf ./$working_dir
-
-
 echo "$(timestamp)  finished execution of benchmarks"
