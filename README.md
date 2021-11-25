@@ -152,15 +152,9 @@ For our benchmark we created three datasets of different sizes:
 
 | No. of universities | No. of triples |
 | ------------------- | -------------- |
-|                     |                |
-
-
-
-The LUBM dataset does not include *sameAs* links. Therefore, we constructed a single large dataset containing *sameAs* links to measure the impact of equality reasoning.
-
-| No. of universities | No. of triples | No. of *sameAs* links |
-| ------------------- | -------------- | --------------------- |
-|                     |                |                       |
+| 5                   | ~600,000       |
+| 10                  | ~1,300,000     |
+| 50                  | ~6,900,000     |
 
 
 
