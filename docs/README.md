@@ -24,7 +24,7 @@ The informal definition of our Maximally Simple Knowledge Representation Formali
 
 In the following we give an abstract syntax definition for *regular types*, *enumerated types*, *datatypes* and *global properties*.
 
-**Definition 2.** A regular type is defined as triple $$\langle U,S,PR \rangle$$,where
+**Definition 2.** A regular type is defined as triple $\langle U,S,PR \rangle$,where
 
 -   **U** – URI – identifier of the type
 
