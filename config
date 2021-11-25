@@ -1,4 +1,4 @@
 working_dir="Benchmark_Temp_Dir"
 java_max_ram="5096m"
-dataset_sizes=1
-formalism_list=mskr,rdfs,rdfs-plus,owl
+dataset_sizes=5,10,50
+formalism_list=mskr,rdfs,rdfs-plus

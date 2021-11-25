@@ -5,6 +5,35 @@ Therefore, we present a knowledge representation formalism supporting the aforem
 
 
 
+## How to run the benchmark
+
+Within the git repository is a filed called "config" that allows to configure certain parameters of the benchmark:
+
+- **working_dir** - temp directory for storing all the files that are used for the benchmark execution
+- **java_max_ram** - max RAM the Apache Jena Fuseki server is allowed to use
+- **dataset_sizes** - comma separated list of numbers. For each number a corresponding dataset is generated. The number represents the number of universities included in the dataset
+  - 5 -> 5 Universities -> ~600,000 triples
+  - 10 -> 10 Universities -> ~1,300,000 triples
+  - 50 -> 50 Universities -> ~6,900,000 triples
+- **formalism_list** - list of formalisms that should be used for benchmarking. **Caution**: Every formalism needs a corresponding rules file in the `Rules` folder.
+
+After specifying the configuration of the Benchmark we can start the execution. Therefore, the shell-script `Execute_Benchmark.sh` is executed. This script does the following:
+
+1. Create the *working_dir* as specified in the configuration file
+2. Create the different datasets as specified by the *dataset_sizes* configuration
+3. Each of those datasets is then loaded into an Apache Fuseki Jena TDB2 database
+4. Fuseki configurations for the different formalisms and all databases is generated
+5. Execution of the **query_answering** part of the benchmark 
+6. Execution of the **constraint_checking** part of the benchmark
+7. Finally, the results are copied to a `Result` folder which lies outside of the *working_dir*
+   1. The `working_dir` can be deleted afterwards if not needed
+
+
+
+After the benchmark execution, the `Result` folder contains the results for **query_answering** and **constraint_checking**. The results include the average response time for the queries for the different formalisms on the different datasets. For constraint checking, the results contain the total execution time for the shapes on the different datasets for the different formalisms.
+
+
+
 ## Git Structure
 
 In this section we are going to describe the structure of the git repository. Besides, the we explain what is contained in the specific folders and how to execute the scripts.
@@ -20,6 +49,12 @@ Currently, this repository contains the following folders:
 ### Bash_Utilities
 
 Currently contains a single bash script only. This bash script allows to print the current time stamp on the console. This method is mainly used for logging.
+
+
+
+### Constraint_Checking
+
+Contains a SHACL2SPARQL implementation in python. This script applies the given SHACL shapes on the datasets and measures the total execution time.
 
 
 
@@ -87,9 +122,21 @@ Contains the 14 queries provided by the LUBM benchmark dataset.
 
 
 
+### Query_Answering
+
+Script and python implementations for running the LUBM-SPARQL queries against the different datasets. Time between sending the SPARQL query and receiving the result is measured.
+
+
+
 ### Rules
 
 Contains the rule files for the supported knowledge representation formalisms.
+
+
+
+### Shapes
+
+SHACL shapes that are used for the constraint checking task.
 
 
 
