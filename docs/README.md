@@ -214,7 +214,57 @@ In the following we give a textual explanation of the different clauses mentione
 
 ## Concrete Syntax
 
-<TBD>
+MSKR is aligned with the data model of schema.org, which is derived from RDF-Schema. RDF-Schema itself is an extension of RDF. A language applicable to describe and verify RDF data is SHACL[^1]. As syntax for MSKR, a special notation of SHACL is used to define types, their supertype, and properties. This notation is a shortcut of the standard notation without explicitly mentioning the target class (the focus node of a SHACL shape). Due to this shortcut, a more intuitive definition of types is possible. The special notation of SHACL implicitly defines target classes for SHACL shapes and is defined as follows:
+
+*“If s is a SHACL instance of sh:NodeShape or sh:PropertyShape in a shapes graph SG and s is also a SHACL instance of rdfs:Class in SG then the set of SHACL instances of s in a data graph DG is a target from DG for s in SG.”* - SHACL Specification Implicit Class Targets[^2]
+
+Besides, the MSKR syntax requires the property *rdfs:subClassOf* for each type definition to determine the hierarchy and especially the inheritance of constraints from supertypes. Except for those two requirements, we aim to support all the other SHACL features[^3].
+
+An example using the short notation of SHACL for defining a *Hotel* type is shown in the following Listing:
+
+```SHACL
+@prefix schema: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+        
+schema:Hotel 
+  a rdfs:Class, sh:NodeShape ;
+  rdfs:subClassOf schema:Thing;
+  sh:property [
+    sh:path schema:makesOffer ;
+    sh:node schema:Offer ;
+    sh:name "Things the hotel offers" ;
+  ] ;
+  sh:property [
+    sh:path schema:name ;
+    sh:datatype xsd:string ;
+    sh:name "Name of the hotel" ;
+  ] .
+```
+
+
+The shape for type *schema:Hotel* is defined as *rdfs:Class* with the relevant constraints for the properties. Additionally, to represent the type hierarchy the property *rdfs:subClassOf* is used. In this listing the *rdfs:subClassOf* property defines that *schema:Hotel* is a subclass of *schema:Thing*.
+
+For the definition of property shapes, there is no such notation defined. Therefore, the property *sh:targetClass* is used to define the domains the global property applies. An example for defining `location` as a global property is given in the following Listing:
+
+    ex:GlobalLocationShape
+      a sh:PropertyShape ;
+      sh:targetClass schema:Event, schema:Organization ;
+      sh:path schema:location ;
+      sh:or (
+        [ sh:class schema:Place ; ]
+        [ sh:class schema:PostalAddress ; ]
+        [ sh:datatype xsd:string ; ]
+        [ sh:class schema:VirtualLocation ; ]
+      ) ;
+      sh:name "location of something" .
+
+
+[^1]: <https://www.w3.org/TR/shacl/>
+
+[^2]: Quoted from: <https://www.w3.org/TR/shacl/#implicit-targetClass>
+
+[^3]: consider the SHACL documentation for a definition of other
 
 
 
