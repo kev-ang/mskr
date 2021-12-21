@@ -25,7 +25,7 @@ mkdir $working_dir
 # Execute the benchmark on constraint checking
 ./Constraint_Checking/Run_Constraint_Checking.sh
 
-# Copy results to result folder and remove working directory
+# Copy results to result folder
 # Copy query results
 mkdir -p ./Results/Queries
 cp ./$working_dir/Query_Results/error.log ./Results/Queries

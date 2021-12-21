@@ -1,0 +1,64 @@
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ub:<http://swat.cse.lehigh.edu/onto/univ-bench.owl#> .
+
+ub:FullProfessor
+  a rdfs:Class, sh:NodeShape ;
+  sh:property [
+    sh:path ub:doctoralDegreeFrom ;
+    sh:node ub:University ;
+    sh:minCount 1 ;
+  ] ;
+  sh:property [
+    sh:path ub:emailAddress ;
+    sh:minCount 1 ;
+  ] ;
+  sh:property [
+    sh:path ub:headOf ;
+    sh:maxCount 1 ;
+    sh:node ub:Department ;
+  ] ;
+  sh:property [
+    sh:path ub:mastersDegreeFrom ;
+    sh:node ub:University ;
+    sh:minCount 1 ;
+  ] ;
+  sh:property [
+    sh:path ub:name ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path ub:researchInterest ;
+    sh:minCount 1 ;
+  ] ;
+  sh:property [
+    sh:path ub:teacherOf ;
+    sh:minCount 1 ;
+    sh:maxCount 2
+    sh:node ub:Course ;
+  ] ;
+  sh:property [
+    sh:path ub:teacherOf ;
+    sh:minCount 1 ;
+    sh:maxCount 2 ;
+    sh:node ub:GraduateCourse ;
+  ] ;
+  sh:property [
+    sh:path ub:telephone ;
+    sh:minCount 1 ;
+  ] ;
+  sh:property [
+    sh:path ub:undergraduateDegreeFrom ;
+    sh:minCount 1 ;
+    sh:node ub:University ;
+  ] ;
+  sh:property [
+    sh:path ub:worksFor ;
+    sh:minCount 1 ;
+    sh:node ub:Department ;
+  ] .

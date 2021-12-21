@@ -2,7 +2,6 @@
 # Run the benchmark over all databases using the given configurations
 
 source ./Bash_Utilities/timestamp.sh
-source ./Bash_Utilities/wait_until_endpoint_available.sh
 source ./config
 
 # Switch to benchmark folder

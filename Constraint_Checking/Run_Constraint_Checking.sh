@@ -2,7 +2,6 @@
 # Run the benchmark over all databases using the given configurations
 
 source ./Bash_Utilities/timestamp.sh
-source ./Bash_Utilities/wait_until_endpoint_available.sh
 source ./config
 
 # Switch to benchmark folder
@@ -18,7 +17,7 @@ mkdir $constraint_working_dir
 echo "$(timestamp)  start execution of constraint checking"
 
 # get list of configurations
-#configurations=($configuration_working_dir/Configuration*.ttl)
+configurations=($configuration_working_dir/Configuration*.ttl)
 
 # get list of shapes
 shapes=($shapes_dir/*)
@@ -35,28 +34,25 @@ for configuration in ${configurations[@]}; do
 
   sleep 10
 
-  for shape in ${shapes[@]}; do
-    echo "$(timestamp) executing constraints from folder: ${shape}"
+  # Remove all unnecessary parts of the config name to retrieve the formalism
+  formalism=${configname#"Configuration_Dataset_"}
+  formalism=${formalism%".ttl"}
+  formalism=${formalism##*"_"}
 
-    # Remove all unnecessary parts of the config name to retrieve the formalism
-    formalism=${configname#"Configuration_Dataset_"}
-    formalism=${formalism%".ttl"}
-    formalism=${formalism##*"_"}
+  # Remove all unnecessary parts of the config name to retrieve the dataset
+  dataset=${configname#"Configuration_Dataset_"}
+  dataset=${dataset%"_"*}
 
-    # Remove all unnecessary parts of the config name to retrieve the dataset
-    dataset=${configname#"Configuration_Dataset_"}
-    dataset=${dataset%"_"*}
+  # Remove all unnecessary parts of the shapes directory to retrieve the current shape set
+  schema_specific_output_folder=${shape#$shapes_dir/}
 
-    # Remove all unnecessary parts of the shapes directory to retrieve the current shape set
-    schema_specific_output_folder=${shape#$shapes_dir/}
-
-    python3 Constraint_Checking.py -d $shape http://localhost:3030/dataset/query $constraint_working_dir/${dataset}/${schema_specific_output_folder}/${formalism}/
-  done
+  mkdir -p $constraint_working_dir/${dataset}/${formalism}/
+  java -jar rdfunit.jar -d ${dataset} -e http://localhost:3030/dataset/query -s $shapes_dir/All_Shapes.ttl -f $constraint_working_dir/${dataset}/${formalism}/ -o json-ld
 
   docker-compose -f ../Jena_Fuseki/docker-compose.yaml down
 done
 
 # Evaluate results
-python3 Constraint_Result_Evaluator.py -r $constraint_working_dir -o $constraint_working_dir
+#python3 Constraint_Result_Evaluator.py -r $constraint_working_dir -o $constraint_working_dir
 
 echo "$(timestamp)  finished execution of constraint checking"
