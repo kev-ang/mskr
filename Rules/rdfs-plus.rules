@@ -114,3 +114,14 @@
 
 [sameIndividualAs3: (?X owl:sameAs ?Y), (?X rdf:type owl:Thing), (?Y rdf:type owl:Thing)
                     -> (?X owl:sameIndividualAs ?Y) ]
+
+#------------------------------------------------------------------
+# The Semantics of Equality
+#------------------------------------------------------------------
+
+[eq_ref:(?s ?p ?o), notEqual(?p,  owl:sameAs) -> (?s owl:sameAs ?s), (?p owl:sameAs ?p), (?o owl:sameAs ?o)]
+[eq_sym:(?s owl:sameAs ?o), notEqual(?s, ?o) -> (?o owl:sameAs ?s)]
+[eq_trans:(?x owl:sameAs ?y), notEqual(?x, ?y), (?y owl:sameAs ?z), notEqual(?y, ?z) -> (?x owl:sameAs ?z)]
+[eq_rep_s:(?x owl:sameAs ?y), notEqual(?x, ?y), (?x ?p ?o) -> (?y ?p ?o)]
+[eq_rep_p:(?x owl:sameAs ?y), notEqual(?x, ?y), (?s ?x ?o) -> (?s ?y ?o)]
+[eq_rep_o:(?x owl:sameAs ?y), notEqual(?x, ?y), (?s ?p ?x) -> (?s ?p ?y)]

@@ -56,7 +56,6 @@ def compare_results(reports, folder):
                 write_error_report(folder, "Results for query " + query + " differs for the different formalisms!")
 
 def calculate_mean_duration(reports):
-    print("bla")
     timing_report = {}
     for report in reports:
         formalism_report = {}

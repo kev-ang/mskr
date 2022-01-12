@@ -1,9 +1,9 @@
 # MSKR
 Knowledge graphs are very large semantic nets that integrate data from heterogeneous sources relying on a knowledge representation formalism to describe the stored knowledge. The size of knowledge graphs can quickly grow to a vast amount of facts a reasoning engine must handle. For a performant, in terms of reasoning and constraint checking, knowledge graph, a straightforward knowledge representation formalism that is a simple as possible and as expressive as necessary is required. Typically, knowledge graphs have a relatively simple TBox and a vast ABox. A knowledge representation formalism supporting type hierarchies, property definitions, and value assertions including *sameAs* statements is sufficient for most of the enterprise use cases.
 
-Therefore, we present a knowledge representation formalism supporting the aforementioned features, called Maximally Simple Knowledge Representation Formalism for schema.org-based knowledge graphs (MSKR). MSKR is derived from RDFS and aligned with the data model of schema.org. Reasoning with MSKR can be implemented using a rule-based engine.
+For a detailed description on MSKR please consider the paper !!!TODO paper needs to be published!!!.
 
-
+**This git repository contains all the data, rules, and scripts used for the evaluation done in the paper only.**
 
 ## How to run the benchmark
 
@@ -23,7 +23,7 @@ After specifying the configuration of the Benchmark we can start the execution. 
 2. Create the different datasets as specified by the *dataset_sizes* configuration
 3. Each of those datasets is then loaded into an Apache Fuseki Jena TDB2 database
 4. Fuseki configurations for the different formalisms and all databases is generated
-5. Execution of the **query_answering** part of the benchmark 
+5. Execution of the **query_answering** part of the benchmark
 6. Execution of the **constraint_checking** part of the benchmark
 7. Finally, the results are copied to a `Result` folder which lies outside of the *working_dir*
    1. The `working_dir` can be deleted afterwards if not needed
@@ -168,14 +168,14 @@ Queries used for the benchmark are the ones coming with the LUBM dataset. The LU
 # one property and does not assume any hierarchy information or inference.
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX ub: <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#>
-SELECT ?X	
+SELECT ?X
 WHERE
 {?X rdf:type ub:GraduateStudent .
   ?X ub:takesCourse
 http://www.Department0.University0.edu/GraduateCourse0}
 
 # Query2
-# This query increases in complexity: 3 classes and 3 properties are involved. Additionally, 
+# This query increases in complexity: 3 classes and 3 properties are involved. Additionally,
 # there is a triangular pattern of relationships between the objects involved.
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX ub: <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#>
@@ -195,12 +195,12 @@ PREFIX ub: <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#>
 SELECT ?X
 WHERE
 {?X rdf:type ub:Publication .
-  ?X ub:publicationAuthor 
+  ?X ub:publicationAuthor
         http://www.Department0.University0.edu/AssistantProfessor0}
 
 # Query4
-# This query has small input and high selectivity. It assumes subClassOf relationship 
-# between Professor and its subclasses. Class Professor has a wide hierarchy. Another 
+# This query has small input and high selectivity. It assumes subClassOf relationship
+# between Professor and its subclasses. Class Professor has a wide hierarchy. Another
 # feature is that it queries about multiple properties of a single class.
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX ub: <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#>
@@ -240,7 +240,7 @@ SELECT ?X WHERE {?X rdf:type ub:Student}
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX ub: <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#>
 SELECT ?X, ?Y
-WHERE 
+WHERE
 {?X rdf:type ub:Student .
   ?Y rdf:type ub:Course .
   ?X ub:takesCourse ?Y .
@@ -279,7 +279,7 @@ WHERE
 
 # Query10
 # This query differs from Query 6, 7, 8 and 9 in that it only requires the
-# (implicit) subClassOf relationship between GraduateStudent and Student, i.e., 
+# (implicit) subClassOf relationship between GraduateStudent and Student, i.e.,
 #subClassOf rela-tionship between UndergraduateStudent and Student does not add
 # to the results.
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -295,9 +295,9 @@ WHERE
 # Query 11, 12 and 13 are intended to verify the presence of certain OWL reasoning
 # capabilities in the system. In this query, property subOrganizationOf is defined
 # as transitive. Since in the benchmark data, instances of ResearchGroup are stated
-# as a sub-organization of a Department individual and the later suborganization of 
+# as a sub-organization of a Department individual and the later suborganization of
 # a University individual, inference about the subOrgnizationOf relationship between
-# instances of ResearchGroup and University is required to answer this query. 
+# instances of ResearchGroup and University is required to answer this query.
 # Additionally, its input is small.
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX ub: <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#>
@@ -309,7 +309,7 @@ WHERE
 
 # Query12
 # The benchmark data do not produce any instances of class Chair. Instead, each
-# Department individual is linked to the chair professor of that department by 
+# Department individual is linked to the chair professor of that department by
 # property headOf. Hence this query requires realization, i.e., inference that
 # that professor is an instance of class Chair because he or she is the head of a
 # department. Input of this query is small as well.
@@ -325,10 +325,10 @@ WHERE
 
 # Query13
 # Property hasAlumnus is defined in the benchmark ontology as the inverse of
-# property degreeFrom, which has three subproperties: undergraduateDegreeFrom, 
+# property degreeFrom, which has three subproperties: undergraduateDegreeFrom,
 # mastersDegreeFrom, and doctoralDegreeFrom. The benchmark data state a person as
 # an alumnus of a university using one of these three subproperties instead of
-# hasAlumnus. Therefore, this query assumes subPropertyOf relationships between 
+# hasAlumnus. Therefore, this query assumes subPropertyOf relationships between
 # degreeFrom and its subproperties, and also requires inference about inverseOf.
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX ub: <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#>
@@ -831,4 +831,3 @@ Because the LUBM benchmark was designed to test some aspects of OWL reasoning th
 
 </rdf:RDF>
 ```
-

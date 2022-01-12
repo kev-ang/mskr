@@ -1,4 +1,5 @@
 import getopt
+import math
 import os
 import sys
 import time
@@ -41,12 +42,20 @@ def run_queries(endpoint, queries):
         query = queries[query_number]
         print('Executing query: ' + query_number)
         start_time = time.monotonic()
-        result = requests.get(endpoint, params={'query': query})
-        end_time = time.monotonic()
-        query_entry["query"] = query
-        query_entry["result"] = result.text
-        query_entry["executionTime"] = end_time - start_time
-        results[query_number] = query_entry
+        try:
+            result = requests.get(endpoint, params={'query': query}, timeout=7200)
+            end_time = time.monotonic()
+            query_entry["query"] = query
+            query_entry["result"] = result.text
+            query_entry["executionTime"] = end_time - start_time
+            results[query_number] = query_entry
+        except requests.exceptions.Timeout as e:
+            query_entry["query"] = query
+            query_entry["result"] = "DNF"
+            query_entry["executionTime"] = 0
+            results[query_number] = query_entry
+            break
+
     return results
 
 

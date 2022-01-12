@@ -47,12 +47,13 @@ for configuration in ${configurations[@]}; do
   schema_specific_output_folder=${shape#$shapes_dir/}
 
   mkdir -p $constraint_working_dir/${dataset}/${formalism}/
-  java -jar rdfunit.jar -d ${dataset} -e http://localhost:3030/dataset/query -s $shapes_dir/All_Shapes.ttl -f $constraint_working_dir/${dataset}/${formalism}/ -o json-ld
+  java -jar rdfunit.jar -d ${dataset} -e http://localhost:3030/dataset/query -s $shapes_dir/All_Shapes.ttl -f $constraint_working_dir/${dataset}/${formalism}/ -o json-ld -T 0
 
   docker-compose -f ../Jena_Fuseki/docker-compose.yaml down
+  rm -rf cache/
 done
 
 # Evaluate results
-#python3 Constraint_Result_Evaluator.py -r $constraint_working_dir -o $constraint_working_dir
+python3 Constraint_Result_Evaluator.py -r $constraint_working_dir -o $constraint_working_dir
 
 echo "$(timestamp)  finished execution of constraint checking"
