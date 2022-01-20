@@ -27,6 +27,6 @@ services:
     volumes:
       - ./logs:/fuseki/logs
       - ${WORKING_DIR}/Databases:/fuseki/databases
-      - ../Rules:/fuseki/rules
+      - ../Data/Rules:/fuseki/rules
       - ${WORKING_DIR}/Configurations:/fuseki/configs
 #volumes:

@@ -19,7 +19,7 @@ echo "$(timestamp)  start execution of queries"
 configurations=($configuration_working_dir/Configuration*.ttl)
 
 # Build docker container before executing the benchmarks
-export WORKING_DIR=../../$working_dir
+export WORKING_DIR=../$working_dir
 docker-compose -f ../../Jena_Fuseki_Docker/docker-compose.yaml build --build-arg JENA_VERSION=4.2.0
 
 for configuration in ${configurations[@]}; do
