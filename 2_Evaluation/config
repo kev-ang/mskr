@@ -1,0 +1,3 @@
+working_dir="Benchmark_Temp_Dir"
+java_max_ram="10192m"
+formalism_list=mskr,rdfs,rdfs-plus,owl-2-rl

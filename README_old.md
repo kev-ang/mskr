@@ -1,40 +1,5 @@
 # MSKR
 
-Knowledge graphs are very large semantic nets that integrate data from heterogeneous sources relying on a knowledge
-representation formalism to describe the stored knowledge. The size of knowledge graphs can quickly grow to a vast
-amount of facts a reasoning engine must handle. For a performant, in terms of reasoning and constraint checking,
-knowledge graph, a straightforward knowledge representation formalism that is a simple as possible and as expressive as
-necessary is required. Typically, knowledge graphs have a relatively simple TBox and a vast ABox. A knowledge
-representation formalism supporting type hierarchies, property definitions, and value assertions including *sameAs*
-statements is sufficient for most of the enterprise use cases.
-
-For a detailed description on MSKR please consider the paper !!!TODO paper needs to be published!!!.
-
-**This git repository contains all the data and scripts required to reproduce the evaluation presented in the paper
-above.**
-
-## Structure of the git repository
-
-On this page we give a brief overview on the structure of the git repository. Each of those folders contains its
-own `README.md` file presenting detailed information on the content of those folders. The repository consists of five
-root folders:
-
-- 1_Preparation_Phase
-    - Contains scripts for producing the data used for testing. The result of this phase is included in `2_Evaluation`
-      to guarantee reproducibility. Those scripts can be used to generate new test data, e.g., if larger datasets are
-      needed.
-- 2_Evaluation
-    - Data and scripts used for the evaluation presented in the paper can be found here.
-- 3_Evaluation_GraphDB
-    - We manually evaluated the performance of MSKR in comparison to the other formalisms on GraphDB. Additional
-      datasets containing `sameAs` links are included within this folder. Those datasets where produced using the
-      scripts from the `1_Preparation_Phase`.
-- 4_Evaluation_Results
-    - Results produced by the different scripts used to generate the diagrams in the paper are kept within this folder.
-
-## How to reproduce the benchmark?
-
-
 ## How to run the benchmark
 
 Within the git repository is a filed called "config" that allows to configure certain parameters of the benchmark:
