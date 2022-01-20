@@ -11,16 +11,16 @@ echo "$(timestamp)  start execution of benchmarks"
 mkdir $working_dir
 
 # Unzip all relevant datasets
-#./Scripts/Dataset_Setup/Setup_Datasets.sh
+./Scripts/Dataset_Setup/Setup_Datasets.sh
 
 # Create databases used for apache fuseki
-#./Scripts/Databases_Generation/Setup_Databases.sh
+./Scripts/Databases_Generation/Setup_Databases.sh
 
 # Create fuseki configurations for all formalisms and databases
-#./Scripts/Configuration_Generation/Setup_Configurations.sh
+./Scripts/Configuration_Generation/Setup_Configurations.sh
 
 # Execute the benchmark on query answering
-#./Scripts/Query_Answering/Run_Query_Answering.sh
+./Scripts/Query_Answering/Run_Query_Answering.sh
 
 # Execute the benchmark on verification
 ./Scripts/Verification/Run_Verification.sh
