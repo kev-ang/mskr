@@ -43,7 +43,7 @@ for configuration in ${configurations[@]}; do
   mkdir -p $constraint_working_dir/${dataset}/${formalism}/
   java -jar rdfunit.jar -d ${dataset} -e http://localhost:3030/dataset/query -s ../../Data/Shapes/All_Shapes.ttl -f $constraint_working_dir/${dataset}/${formalism}/ -o json-ld -T 0
 
-  docker-compose -f ../../Jena_Fuseki/docker-compose.yaml down
+  docker-compose -f ../../Jena_Fuseki_Docker/docker-compose.yaml down
   rm -rf cache/
 done
 
