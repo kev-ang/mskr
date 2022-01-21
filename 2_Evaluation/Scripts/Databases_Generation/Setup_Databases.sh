@@ -22,7 +22,7 @@ for dataset in ${datasets[@]}; do
   # Remove ../datasets/ from directory name to create a corresponding folder
   database=${dataset#"${dataset_working_dir}/"}
   mkdir $database_working_dir/${database}
-  ./apache-jena-4.2.0/bin/tdb2.tdbloader --loc $database_working_dir/${database} ${dataset}/* ../../Data/Ontology/univ-bench.rdf.xml
+  ./apache-jena-4.3.2/bin/tdb2.tdbloader --loc $database_working_dir/${database} ${dataset}/* ../../Data/Ontology/univ-bench.rdf.xml
   chmod -R 777 $database_working_dir/${database}
 done
 

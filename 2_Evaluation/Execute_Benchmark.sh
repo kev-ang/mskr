@@ -17,13 +17,13 @@ mkdir $working_dir
 ./Scripts/Databases_Generation/Setup_Databases.sh
 
 # Create fuseki configurations for all formalisms and databases
-./Scripts/Configuration_Generation/Setup_Configurations.sh
+#./Scripts/Configuration_Generation/Setup_Configurations.sh
 
 # Execute the benchmark on query answering
-./Scripts/Query_Answering/Run_Query_Answering.sh
+#./Scripts/Query_Answering/Run_Query_Answering.sh
 
 # Execute the benchmark on verification
-./Scripts/Verification/Run_Verification.sh
+#./Scripts/Verification/Run_Verification.sh
 
 # Copy results to result folder
 # Copy query results
