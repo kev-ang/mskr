@@ -1,0 +1,174 @@
+{
+  "@context": {
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "sh": "http://www.w3.org/ns/shacl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "schema": "http://schema.org/",
+    "ds": "http://vocab.sti2.at/ds/",
+    "ds:usedVocabularies": {
+      "@id": "ds:usedVocabularies",
+      "@type": "@id"
+    },
+    "sh:targetClass": {
+      "@id": "sh:targetClass",
+      "@type": "@id"
+    },
+    "sh:property": {
+      "@id": "sh:property"
+    },
+    "sh:path": {
+      "@id": "sh:path",
+      "@type": "@id"
+    },
+    "sh:datatype": {
+      "@id": "sh:datatype",
+      "@type": "@id"
+    },
+    "sh:node": {
+      "@id": "sh:node"
+    },
+    "sh:class": {
+      "@id": "sh:class",
+      "@type": "@id"
+    },
+    "sh:or": {
+      "@id": "sh:or",
+      "@container": "@list"
+    },
+    "sh:in": {
+      "@id": "sh:in",
+      "@container": "@list"
+    },
+    "sh:languageIn": {
+      "@id": "sh:languageIn",
+      "@container": "@list"
+    },
+    "sh:equals": {
+      "@id": "sh:equals",
+      "@type": "@id"
+    },
+    "sh:disjoint": {
+      "@id": "sh:disjoint",
+      "@type": "@id"
+    },
+    "sh:lessThan": {
+      "@id": "sh:lessThan",
+      "@type": "@id"
+    },
+    "sh:lessThanOrEquals": {
+      "@id": "sh:lessThanOrEquals",
+      "@type": "@id"
+    },
+    "dash": "http://datashapes.org/dash#",
+    "ub": "http://swat.cse.lehigh.edu/onto/univ-bench.owl#"
+  },
+  "@graph": [
+    {
+      "@id": "_:RootNode",
+      "@type": [
+        "sh:NodeShape",
+        "schema:CreativeWork"
+      ],
+      "schema:author": {
+        "@type": "schema:Person",
+        "schema:name": "kevin.angele@uibk.ac.at",
+        "schema:memberOf": {
+          "@type": "schema:Organization",
+          "schema:name": "STI"
+        }
+      },
+      "schema:description": "",
+      "schema:name": "LUBM AssistantProfessor",
+      "schema:schemaVersion": "https://schema.org/version/13.0/",
+      "schema:version": 2,
+      "ds:usedVocabularies": [
+        "https://semantify.it/voc/-FckUFMDB"
+      ],
+      "sh:property": [
+        {
+          "@type": "sh:PropertyShape",
+          "sh:path": "ub:doctoralDegreeFrom",
+          "sh:or": [
+            {
+              "sh:class": "ub:University"
+            }
+          ]
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:path": "ub:emailAddress",
+          "sh:or": [
+            {
+              "sh:datatype": "xsd:string"
+            }
+          ]
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:path": "ub:mastersDegreeFrom",
+          "sh:or": [
+            {
+              "sh:class": "ub:University"
+            }
+          ]
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:path": "ub:name",
+          "sh:or": [
+            {
+              "sh:datatype": "xsd:string"
+            }
+          ]
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:path": "ub:researchInterest",
+          "sh:or": [
+            {
+              "sh:datatype": "xsd:string"
+            }
+          ]
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:path": "ub:teacherOf",
+          "sh:or": [
+            {
+              "sh:class": "ub:Course"
+            }
+          ]
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:path": "ub:telephone",
+          "sh:or": [
+            {
+              "sh:datatype": "xsd:string"
+            }
+          ]
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:path": "ub:undergraduateDegreeFrom",
+          "sh:or": [
+            {
+              "sh:class": "ub:University"
+            }
+          ]
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:path": "ub:worksFor",
+          "sh:or": [
+            {
+              "sh:class": "ub:Department"
+            }
+          ]
+        }
+      ],
+      "sh:targetClass": "ub:AssistantProfessor"
+    }
+  ]
+}

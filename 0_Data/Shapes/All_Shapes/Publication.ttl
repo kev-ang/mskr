@@ -1,0 +1,18 @@
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ub:<http://swat.cse.lehigh.edu/onto/univ-bench.owl#> .
+
+ub:Publication
+  a rdfs:Class, sh:NodeShape ;
+  sh:property [
+    sh:path ub:name ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path ub:publicationAuthor ;
+    sh:class ub:Person ;
+  ] .

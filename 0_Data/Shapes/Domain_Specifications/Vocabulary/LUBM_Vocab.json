@@ -1,0 +1,1230 @@
+{
+  "@context": {
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "schema": "http://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dash": "http://datashapes.org/dash#",
+    "ub": "http://swat.cse.lehigh.edu/onto/univ-bench.owl#"
+  },
+  "@graph": [
+    {
+      "@id": "ub:Organization",
+      "rdfs:subClassOf": {
+        "@id": "schema:Thing"
+      },
+      "rdfs:label": {
+        "@value": "organization",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "organization",
+        "@language": "en"
+      },
+      "@type": "rdfs:Class"
+    },
+    {
+      "@id": "ub:Institute",
+      "rdfs:subClassOf": {
+        "@id": "ub:Organization"
+      },
+      "rdfs:label": {
+        "@value": "institute",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "institute",
+        "@language": "en"
+      },
+      "@type": "rdfs:Class"
+    },
+    {
+      "@id": "ub:Program",
+      "rdfs:subClassOf": {
+        "@id": "ub:Organization"
+      },
+      "rdfs:label": {
+        "@value": "program",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "program",
+        "@language": "en"
+      },
+      "@type": "rdfs:Class"
+    },
+    {
+      "@id": "ub:ResearchGroup",
+      "rdfs:subClassOf": {
+        "@id": "ub:Organization"
+      },
+      "rdfs:label": {
+        "@value": "research group",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "research group",
+        "@language": "en"
+      },
+      "@type": "rdfs:Class"
+    },
+    {
+      "@id": "ub:College",
+      "rdfs:subClassOf": {
+        "@id": "ub:Organization"
+      },
+      "rdfs:label": {
+        "@value": "school",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "school",
+        "@language": "en"
+      },
+      "@type": "rdfs:Class"
+    },
+    {
+      "@id": "ub:University",
+      "rdfs:subClassOf": {
+        "@id": "ub:Organization"
+      },
+      "rdfs:label": {
+        "@value": "university",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "university",
+        "@language": "en"
+      },
+      "@type": "rdfs:Class"
+    },
+    {
+      "@id": "ub:Department",
+      "rdfs:subClassOf": {
+        "@id": "ub:Organization"
+      },
+      "rdfs:label": {
+        "@value": "university department",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "university department",
+        "@language": "en"
+      },
+      "@type": "rdfs:Class"
+    },
+    {
+      "@id": "ub:Person",
+      "rdfs:subClassOf": {
+        "@id": "schema:Thing"
+      },
+      "rdfs:label": {
+        "@value": "person",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "person",
+        "@language": "en"
+      },
+      "@type": "rdfs:Class"
+    },
+    {
+      "@id": "ub:Employee",
+      "rdfs:subClassOf": {
+        "@id": "ub:Person"
+      },
+      "rdfs:label": {
+        "@value": "employee",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "employee",
+        "@language": "en"
+      },
+      "@type": "rdfs:Class"
+    },
+    {
+      "@id": "ub:AdministrativeStaff",
+      "rdfs:subClassOf": {
+        "@id": "ub:Employee"
+      },
+      "rdfs:label": {
+        "@value": "administrative staff worker",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "administrative staff worker",
+        "@language": "en"
+      },
+      "@type": "rdfs:Class"
+    },
+    {
+      "@id": "ub:ClericalStaff",
+      "rdfs:subClassOf": {
+        "@id": "ub:AdministrativeStaff"
+      },
+      "rdfs:label": {
+        "@value": "clerical staff worker",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "clerical staff worker",
+        "@language": "en"
+      },
+      "@type": "rdfs:Class"
+    },
+    {
+      "@id": "ub:SystemsStaff",
+      "rdfs:subClassOf": {
+        "@id": "ub:AdministrativeStaff"
+      },
+      "rdfs:label": {
+        "@value": "systems staff worker",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "systems staff worker",
+        "@language": "en"
+      },
+      "@type": "rdfs:Class"
+    },
+    {
+      "@id": "ub:Director",
+      "rdfs:subClassOf": {
+        "@id": "ub:Employee"
+      },
+      "rdfs:label": {
+        "@value": "director",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "director",
+        "@language": "en"
+      },
+      "@type": "rdfs:Class"
+    },
+    {
+      "@id": "ub:Faculty",
+      "rdfs:subClassOf": {
+        "@id": "ub:Employee"
+      },
+      "rdfs:label": {
+        "@value": "faculty member",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "faculty member",
+        "@language": "en"
+      },
+      "@type": "rdfs:Class"
+    },
+    {
+      "@id": "ub:Lecturer",
+      "rdfs:subClassOf": {
+        "@id": "ub:Faculty"
+      },
+      "rdfs:label": {
+        "@value": "lecturer",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "lecturer",
+        "@language": "en"
+      },
+      "@type": "rdfs:Class"
+    },
+    {
+      "@id": "ub:PostDoc",
+      "rdfs:subClassOf": {
+        "@id": "ub:Faculty"
+      },
+      "rdfs:label": {
+        "@value": "post doctorate",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "post doctorate",
+        "@language": "en"
+      },
+      "@type": "rdfs:Class"
+    },
+    {
+      "@id": "ub:Professor",
+      "rdfs:subClassOf": {
+        "@id": "ub:Faculty"
+      },
+      "rdfs:label": {
+        "@value": "professor",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "professor",
+        "@language": "en"
+      },
+      "@type": "rdfs:Class"
+    },
+    {
+      "@id": "ub:AssistantProfessor",
+      "rdfs:subClassOf": {
+        "@id": "ub:Professor"
+      },
+      "rdfs:label": {
+        "@value": "assistant professor",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "assistant professor",
+        "@language": "en"
+      },
+      "@type": "rdfs:Class"
+    },
+    {
+      "@id": "ub:AssociateProfessor",
+      "rdfs:subClassOf": {
+        "@id": "ub:Professor"
+      },
+      "rdfs:label": {
+        "@value": "associate professor",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "associate professor",
+        "@language": "en"
+      },
+      "@type": "rdfs:Class"
+    },
+    {
+      "@id": "ub:Chair",
+      "rdfs:subClassOf": {
+        "@id": "ub:Professor"
+      },
+      "rdfs:label": {
+        "@value": "chair",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "chair",
+        "@language": "en"
+      },
+      "@type": "rdfs:Class"
+    },
+    {
+      "@id": "ub:Dean",
+      "rdfs:subClassOf": {
+        "@id": "ub:Professor"
+      },
+      "rdfs:label": {
+        "@value": "dean",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "dean",
+        "@language": "en"
+      },
+      "@type": "rdfs:Class"
+    },
+    {
+      "@id": "ub:FullProfessor",
+      "rdfs:subClassOf": {
+        "@id": "ub:Professor"
+      },
+      "rdfs:label": {
+        "@value": "full professor",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "full professor",
+        "@language": "en"
+      },
+      "@type": "rdfs:Class"
+    },
+    {
+      "@id": "ub:VisitingProfessor",
+      "rdfs:subClassOf": {
+        "@id": "ub:Professor"
+      },
+      "rdfs:label": {
+        "@value": "visiting professor",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "visiting professor",
+        "@language": "en"
+      },
+      "@type": "rdfs:Class"
+    },
+    {
+      "@id": "ub:ResearchAssistant",
+      "rdfs:subClassOf": {
+        "@id": "ub:Employee"
+      },
+      "rdfs:label": {
+        "@value": "university research assistant",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "university research assistant",
+        "@language": "en"
+      },
+      "@type": "rdfs:Class"
+    },
+    {
+      "@id": "ub:Student",
+      "rdfs:subClassOf": {
+        "@id": "ub:Person"
+      },
+      "rdfs:label": {
+        "@value": "student",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "student",
+        "@language": "en"
+      },
+      "@type": "rdfs:Class"
+    },
+    {
+      "@id": "ub:GraduateStudent",
+      "rdfs:subClassOf": {
+        "@id": "ub:Student"
+      },
+      "rdfs:label": {
+        "@value": "graduate student",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "graduate student",
+        "@language": "en"
+      },
+      "@type": "rdfs:Class"
+    },
+    {
+      "@id": "ub:UndergraduateStudent",
+      "rdfs:subClassOf": {
+        "@id": "ub:Student"
+      },
+      "rdfs:label": {
+        "@value": "undergraduate student",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "undergraduate student",
+        "@language": "en"
+      },
+      "@type": "rdfs:Class"
+    },
+    {
+      "@id": "ub:TeachingAssistant",
+      "rdfs:subClassOf": {
+        "@id": "ub:Person"
+      },
+      "rdfs:label": {
+        "@value": "university teaching assistant",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "university teaching assistant",
+        "@language": "en"
+      },
+      "@type": "rdfs:Class"
+    },
+    {
+      "@id": "ub:Publication",
+      "rdfs:subClassOf": {
+        "@id": "schema:Thing"
+      },
+      "rdfs:label": {
+        "@value": "publication",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "publication",
+        "@language": "en"
+      },
+      "@type": "rdfs:Class"
+    },
+    {
+      "@id": "ub:Article",
+      "rdfs:subClassOf": {
+        "@id": "ub:Publication"
+      },
+      "rdfs:label": {
+        "@value": "article",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "article",
+        "@language": "en"
+      },
+      "@type": "rdfs:Class"
+    },
+    {
+      "@id": "ub:ConferencePaper",
+      "rdfs:subClassOf": {
+        "@id": "ub:Article"
+      },
+      "rdfs:label": {
+        "@value": "conference paper",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "conference paper",
+        "@language": "en"
+      },
+      "@type": "rdfs:Class"
+    },
+    {
+      "@id": "ub:JournalArticle",
+      "rdfs:subClassOf": {
+        "@id": "ub:Article"
+      },
+      "rdfs:label": {
+        "@value": "journal article",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "journal article",
+        "@language": "en"
+      },
+      "@type": "rdfs:Class"
+    },
+    {
+      "@id": "ub:TechnicalReport",
+      "rdfs:subClassOf": {
+        "@id": "ub:Article"
+      },
+      "rdfs:label": {
+        "@value": "technical report",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "technical report",
+        "@language": "en"
+      },
+      "@type": "rdfs:Class"
+    },
+    {
+      "@id": "ub:Book",
+      "rdfs:subClassOf": {
+        "@id": "ub:Publication"
+      },
+      "rdfs:label": {
+        "@value": "book",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "book",
+        "@language": "en"
+      },
+      "@type": "rdfs:Class"
+    },
+    {
+      "@id": "ub:Manual",
+      "rdfs:subClassOf": {
+        "@id": "ub:Publication"
+      },
+      "rdfs:label": {
+        "@value": "manual",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "manual",
+        "@language": "en"
+      },
+      "@type": "rdfs:Class"
+    },
+    {
+      "@id": "ub:Specification",
+      "rdfs:subClassOf": {
+        "@id": "ub:Publication"
+      },
+      "rdfs:label": {
+        "@value": "published specification",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "published specification",
+        "@language": "en"
+      },
+      "@type": "rdfs:Class"
+    },
+    {
+      "@id": "ub:Software",
+      "rdfs:subClassOf": {
+        "@id": "ub:Publication"
+      },
+      "rdfs:label": {
+        "@value": "software program",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "software program",
+        "@language": "en"
+      },
+      "@type": "rdfs:Class"
+    },
+    {
+      "@id": "ub:UnofficialPublication",
+      "rdfs:subClassOf": {
+        "@id": "ub:Publication"
+      },
+      "rdfs:label": {
+        "@value": "unofficial publication",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "unofficial publication",
+        "@language": "en"
+      },
+      "@type": "rdfs:Class"
+    },
+    {
+      "@id": "ub:Schedule",
+      "rdfs:subClassOf": {
+        "@id": "schema:Thing"
+      },
+      "rdfs:label": {
+        "@value": "schedule",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "schedule",
+        "@language": "en"
+      },
+      "@type": "rdfs:Class"
+    },
+    {
+      "@id": "ub:Work",
+      "rdfs:subClassOf": {
+        "@id": "schema:Thing"
+      },
+      "rdfs:label": {
+        "@value": "work",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "work",
+        "@language": "en"
+      },
+      "@type": "rdfs:Class"
+    },
+    {
+      "@id": "ub:Research",
+      "rdfs:subClassOf": {
+        "@id": "ub:Work"
+      },
+      "rdfs:label": {
+        "@value": "research work",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "research work",
+        "@language": "en"
+      },
+      "@type": "rdfs:Class"
+    },
+    {
+      "@id": "ub:Course",
+      "rdfs:subClassOf": {
+        "@id": "ub:Work"
+      },
+      "rdfs:label": {
+        "@value": "teaching course",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "teaching course",
+        "@language": "en"
+      },
+      "@type": "rdfs:Class"
+    },
+    {
+      "@id": "ub:GraduateCourse",
+      "rdfs:subClassOf": {
+        "@id": "ub:Course"
+      },
+      "rdfs:label": {
+        "@value": "graduate level courses",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "graduate level courses",
+        "@language": "en"
+      },
+      "@type": "rdfs:Class"
+    },
+    {
+      "@id": "ub:degreeFrom",
+      "schema:domainIncludes": {
+        "@id": "ub:Person"
+      },
+      "schema:rangeIncludes": {
+        "@id": "ub:University"
+      },
+      "rdfs:label": {
+        "@value": "has a degree from",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "has a degree from",
+        "@language": "en"
+      },
+      "@type": "rdf:Property"
+    },
+    {
+      "@id": "ub:doctoralDegreeFrom",
+      "schema:domainIncludes": {
+        "@id": "ub:Person"
+      },
+      "schema:rangeIncludes": {
+        "@id": "ub:University"
+      },
+      "rdfs:label": {
+        "@value": "has a doctoral degree from",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "has a doctoral degree from",
+        "@language": "en"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "ub:degreeFrom"
+      },
+      "@type": "rdf:Property"
+    },
+    {
+      "@id": "ub:mastersDegreeFrom",
+      "schema:domainIncludes": {
+        "@id": "ub:Person"
+      },
+      "schema:rangeIncludes": {
+        "@id": "ub:University"
+      },
+      "rdfs:label": {
+        "@value": "has a masters degree from",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "has a masters degree from",
+        "@language": "en"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "ub:degreeFrom"
+      },
+      "@type": "rdf:Property"
+    },
+    {
+      "@id": "ub:undergraduateDegreeFrom",
+      "schema:domainIncludes": {
+        "@id": "ub:Person"
+      },
+      "schema:rangeIncludes": {
+        "@id": "ub:University"
+      },
+      "rdfs:label": {
+        "@value": "has an undergraduate degree from",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "has an undergraduate degree from",
+        "@language": "en"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "ub:degreeFrom"
+      },
+      "@type": "rdf:Property"
+    },
+    {
+      "@id": "ub:member",
+      "schema:domainIncludes": {
+        "@id": "ub:Organization"
+      },
+      "schema:rangeIncludes": {
+        "@id": "ub:Person"
+      },
+      "rdfs:label": {
+        "@value": "has as a member",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "has as a member",
+        "@language": "en"
+      },
+      "@type": "rdf:Property"
+    },
+    {
+      "@id": "ub:researchProject",
+      "schema:domainIncludes": {
+        "@id": "ub:ResearchGroup"
+      },
+      "schema:rangeIncludes": {
+        "@id": "ub:Research"
+      },
+      "rdfs:label": {
+        "@value": "has as a research project",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "has as a research project",
+        "@language": "en"
+      },
+      "@type": "rdf:Property"
+    },
+    {
+      "@id": "ub:hasAlumnus",
+      "schema:domainIncludes": {
+        "@id": "ub:University"
+      },
+      "schema:rangeIncludes": {
+        "@id": "ub:Person"
+      },
+      "rdfs:label": {
+        "@value": "has as an alumnus",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "has as an alumnus",
+        "@language": "en"
+      },
+      "@type": "rdf:Property"
+    },
+    {
+      "@id": "ub:teachingAssistantOf",
+      "schema:domainIncludes": {
+        "@id": "ub:TeachingAssistant"
+      },
+      "schema:rangeIncludes": {
+        "@id": "ub:Course"
+      },
+      "rdfs:label": {
+        "@value": "is a teaching assistant for",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "is a teaching assistant for",
+        "@language": "en"
+      },
+      "@type": "rdf:Property"
+    },
+    {
+      "@id": "ub:publicationResearch",
+      "schema:domainIncludes": {
+        "@id": "ub:Publication"
+      },
+      "schema:rangeIncludes": {
+        "@id": "ub:Research"
+      },
+      "rdfs:label": {
+        "@value": "is about",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "is about",
+        "@language": "en"
+      },
+      "@type": "rdf:Property"
+    },
+    {
+      "@id": "ub:affiliateOf",
+      "schema:domainIncludes": {
+        "@id": "ub:Organization"
+      },
+      "schema:rangeIncludes": {
+        "@id": "ub:Person"
+      },
+      "rdfs:label": {
+        "@value": "is affiliated with",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "is affiliated with",
+        "@language": "en"
+      },
+      "@type": "rdf:Property"
+    },
+    {
+      "@id": "ub:affiliatedOrganizationOf",
+      "schema:domainIncludes": {
+        "@id": "ub:Organization"
+      },
+      "schema:rangeIncludes": {
+        "@id": "ub:Organization"
+      },
+      "rdfs:label": {
+        "@value": "is affiliated with organization",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "is affiliated with organization",
+        "@language": "en"
+      },
+      "@type": "rdf:Property"
+    },
+    {
+      "@id": "ub:advisor",
+      "schema:domainIncludes": {
+        "@id": "ub:Person"
+      },
+      "schema:rangeIncludes": {
+        "@id": "ub:Professor"
+      },
+      "rdfs:label": {
+        "@value": "is being advised by",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "is being advised by",
+        "@language": "en"
+      },
+      "@type": "rdf:Property"
+    },
+    {
+      "@id": "ub:softwareDocumentation",
+      "schema:domainIncludes": {
+        "@id": "ub:Software"
+      },
+      "schema:rangeIncludes": {
+        "@id": "ub:Publication"
+      },
+      "rdfs:label": {
+        "@value": "is documented in",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "is documented in",
+        "@language": "en"
+      },
+      "@type": "rdf:Property"
+    },
+    {
+      "@id": "ub:subOrganizationOf",
+      "schema:domainIncludes": {
+        "@id": "ub:Organization"
+      },
+      "schema:rangeIncludes": {
+        "@id": "ub:Organization"
+      },
+      "rdfs:label": {
+        "@value": "is part of",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "is part of",
+        "@language": "en"
+      },
+      "@type": "rdf:Property"
+    },
+    {
+      "@id": "ub:takesCourse",
+      "schema:domainIncludes": {
+        "@id": "ub:Student"
+      },
+      "schema:rangeIncludes": {
+        "@id": "ub:Course"
+      },
+      "rdfs:label": {
+        "@value": "is taking",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "is taking",
+        "@language": "en"
+      },
+      "@type": "rdf:Property"
+    },
+    {
+      "@id": "ub:tenured",
+      "schema:domainIncludes": {
+        "@id": "ub:Professor"
+      },
+      "schema:rangeIncludes": {
+        "@id": "ub:Organization"
+      },
+      "rdfs:label": {
+        "@value": "is tenured",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "is tenured",
+        "@language": "en"
+      },
+      "@type": "rdf:Property"
+    },
+    {
+      "@id": "ub:softwareVersion",
+      "schema:domainIncludes": {
+        "@id": "ub:Software"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      },
+      "rdfs:label": {
+        "@value": "is version",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "is version",
+        "@language": "en"
+      },
+      "@type": "rdf:Property"
+    },
+    {
+      "@id": "ub:listedCourse",
+      "schema:domainIncludes": {
+        "@id": "ub:Schedule"
+      },
+      "schema:rangeIncludes": {
+        "@id": "ub:Course"
+      },
+      "rdfs:label": {
+        "@value": "lists as a course",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "lists as a course",
+        "@language": "en"
+      },
+      "@type": "rdf:Property"
+    },
+    {
+      "@id": "ub:memberOf",
+      "schema:domainIncludes": {
+        "@id": "ub:Person"
+      },
+      "schema:rangeIncludes": {
+        "@id": "ub:Organization"
+      },
+      "rdfs:label": {
+        "@value": "member of",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "member of",
+        "@language": "en"
+      },
+      "@type": "rdf:Property"
+    },
+    {
+      "@id": "ub:worksFor",
+      "schema:domainIncludes": {
+        "@id": "ub:Employee"
+      },
+      "schema:rangeIncludes": {
+        "@id": "ub:Organization"
+      },
+      "rdfs:label": {
+        "@value": "works for",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "works for",
+        "@language": "en"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "ub:memberOf"
+      },
+      "@type": "rdf:Property"
+    },
+    {
+      "@id": "ub:headOf",
+      "schema:domainIncludes": {
+        "@id": "ub:Employee"
+      },
+      "schema:rangeIncludes": {
+        "@id": "ub:Organization"
+      },
+      "rdfs:label": {
+        "@value": "is the head of",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "is the head of",
+        "@language": "en"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "ub:worksFor"
+      },
+      "@type": "rdf:Property"
+    },
+    {
+      "@id": "ub:orgPublication",
+      "schema:domainIncludes": {
+        "@id": "ub:Organization"
+      },
+      "schema:rangeIncludes": {
+        "@id": "ub:Publication"
+      },
+      "rdfs:label": {
+        "@value": "publishes",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "publishes",
+        "@language": "en"
+      },
+      "@type": "rdf:Property"
+    },
+    {
+      "@id": "ub:teacherOf",
+      "schema:domainIncludes": {
+        "@id": "ub:Faculty"
+      },
+      "schema:rangeIncludes": {
+        "@id": "ub:Course"
+      },
+      "rdfs:label": {
+        "@value": "teaches",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "teaches",
+        "@language": "en"
+      },
+      "@type": "rdf:Property"
+    },
+    {
+      "@id": "ub:publicationAuthor",
+      "schema:domainIncludes": {
+        "@id": "ub:Publication"
+      },
+      "schema:rangeIncludes": {
+        "@id": "ub:Person"
+      },
+      "rdfs:label": {
+        "@value": "was written by",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "was written by",
+        "@language": "en"
+      },
+      "@type": "rdf:Property"
+    },
+    {
+      "@id": "ub:publicationDate",
+      "schema:domainIncludes": {
+        "@id": "ub:Publication"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Date"
+      },
+      "rdfs:label": {
+        "@value": "was written on",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "was written on",
+        "@language": "en"
+      },
+      "@type": "rdf:Property"
+    },
+    {
+      "@id": "ub:emailAddress",
+      "schema:domainIncludes": {
+        "@id": "ub:Person"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      },
+      "rdfs:label": {
+        "@value": "can be reached at",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "can be reached at",
+        "@language": "en"
+      },
+      "@type": "rdf:Property"
+    },
+    {
+      "@id": "ub:age",
+      "schema:domainIncludes": {
+        "@id": "ub:Person"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Number"
+      },
+      "rdfs:label": {
+        "@value": "is age",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "is age",
+        "@language": "en"
+      },
+      "@type": "rdf:Property"
+    },
+    {
+      "@id": "ub:researchInterest",
+      "schema:domainIncludes": {
+        "@id": "ub:Professor"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      },
+      "rdfs:label": {
+        "@value": "is researching",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "is researching",
+        "@language": "en"
+      },
+      "@type": "rdf:Property"
+    },
+    {
+      "@id": "ub:name",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      },
+      "rdfs:label": {
+        "@value": "name",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "name",
+        "@language": "en"
+      },
+      "@type": "rdf:Property"
+    },
+    {
+      "@id": "ub:telephone",
+      "schema:domainIncludes": {
+        "@id": "ub:Person"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      },
+      "rdfs:label": {
+        "@value": "telephone number",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "telephone number",
+        "@language": "en"
+      },
+      "@type": "rdf:Property"
+    },
+    {
+      "@id": "ub:title",
+      "schema:domainIncludes": {
+        "@id": "ub:Person"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      },
+      "rdfs:label": {
+        "@value": "title",
+        "@language": "en"
+      },
+      "rdfs:comment": {
+        "@value": "title",
+        "@language": "en"
+      },
+      "@type": "rdf:Property"
+    }
+  ]
+}
