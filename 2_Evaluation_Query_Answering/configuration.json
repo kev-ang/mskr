@@ -1,0 +1,98 @@
+{
+  "name": "MSKR Benchmark",
+  "timeout": 120,
+  "datasets": [
+    {
+      "identifier": "Univ_100",
+      "datasetPath": "/root/MSKR_Benchmark/mskr_java_implementation/Dataset_Univ_100"
+    },
+    {
+      "identifier": "Univ_1000",
+      "datasetPath": "/root/MSKR_Benchmark/mskr_java_implementation/Dataset_Univ_1000"
+    },
+    {
+      "identifier": "Univ_10000",
+      "datasetPath": "/root/MSKR_Benchmark/mskr_java_implementation/Dataset_Univ_10000"
+    }
+  ],
+  "queries": [
+    {
+      "identifier": "query1",
+      "queryPath": "/root/MSKR_Benchmark/mskr_java_implementation/data/queries/query1.sparql"
+    },
+    {
+      "identifier": "query2",
+      "queryPath": "/root/MSKR_Benchmark/mskr_java_implementation/data/queries/query2.sparql"
+    },
+    {
+      "identifier": "query3",
+      "queryPath": "/root/MSKR_Benchmark/mskr_java_implementation/data/queries/query3.sparql"
+    },
+    {
+      "identifier": "query4",
+      "queryPath": "/root/MSKR_Benchmark/mskr_java_implementation/data/queries/query4.sparql"
+    },
+    {
+      "identifier": "query5",
+      "queryPath": "/root/MSKR_Benchmark/mskr_java_implementation/data/queries/query5.sparql"
+    },
+    {
+      "identifier": "query6",
+      "queryPath": "/root/MSKR_Benchmark/mskr_java_implementation/data/queries/query6.sparql"
+    },
+    {
+      "identifier": "query7",
+      "queryPath": "/root/MSKR_Benchmark/mskr_java_implementation/data/queries/query7.sparql"
+    },
+    {
+      "identifier": "query8",
+      "queryPath": "/root/MSKR_Benchmark/mskr_java_implementation/data/queries/query8.sparql"
+    },
+    {
+      "identifier": "query9",
+      "queryPath": "/root/MSKR_Benchmark/mskr_java_implementation/data/queries/query9.sparql"
+    },
+    {
+      "identifier": "query10",
+      "queryPath": "/root/MSKR_Benchmark/mskr_java_implementation/data/queries/query10.sparql"
+    },
+    {
+      "identifier": "query11",
+      "queryPath": "/root/MSKR_Benchmark/mskr_java_implementation/data/queries/query11.sparql"
+    },
+    {
+      "identifier": "query12",
+      "queryPath": "/root/MSKR_Benchmark/mskr_java_implementation/data/queries/query12.sparql"
+    },
+    {
+      "identifier": "query13",
+      "queryPath": "/root/MSKR_Benchmark/mskr_java_implementation/data/queries/query13.sparql"
+    },
+    {
+      "identifier": "query14",
+      "queryPath": "/root/MSKR_Benchmark/mskr_java_implementation/data/queries/query14.sparql"
+    }
+  ],
+  "rules": [
+    {
+      "formalism": "mskr",
+      "rulePath": "/root/MSKR_Benchmark/mskr_java_implementation/data/rules/mskr.rules"
+    },
+    {
+      "formalism": "mskr_dr",
+      "rulePath": "/root/MSKR_Benchmark/mskr_java_implementation/data/rules/mskr_dr.rules"
+    },
+    {
+      "formalism": "rdfs",
+      "rulePath": "/root/MSKR_Benchmark/mskr_java_implementation/data/rules/rdfs.rules"
+    },
+    {
+      "formalism": "rdfs-plus",
+      "rulePath": "/root/MSKR_Benchmark/mskr_java_implementation/data/rules/rdfs-plus.rules"
+    },
+    {
+      "formalism": "owl-2-rl",
+      "rulePath": "/root/MSKR_Benchmark/mskr_java_implementation/data/rules/owl-2-rl.rules"
+    }
+  ]
+}
