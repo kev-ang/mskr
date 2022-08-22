@@ -73,8 +73,8 @@
 # Domain range checking rules
 #------------------------------------------------------------------
 
-[domain_check:(?s ?p ?o), notEqual(?p,  rdf:type), (?p rdfs:domain ?d), (?s rdf:type ?t), notEqual(?d, ?t) -> print(?s, ' has a property ', ?p, ' that does not belong to the type of the instance!')]
-[range_check:(?s ?p ?o), (?p rdfs:range ?z), (?o rdf:type ?t), notEqual(?z, ?t) -> print(?s, ' has a property ', ?p, ' that has a value of the wrong type!')]
+[domain_check:(?s ?p ?o), notEqual(?p,  rdf:type), (?p rdfs:domain ?d), (?s rdf:type ?t), notEqual(?d, ?t) -> ]
+[range_check:(?s ?p ?o), (?p rdfs:range ?z), (?o rdf:type ?t), notEqual(?z, ?t) -> ]
 
 
 #------------------------------------------------------------------
